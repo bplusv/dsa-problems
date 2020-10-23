@@ -5,3 +5,22 @@ Task0: O(1)
     - print statement O(1)
     The worst case run time is constant.
 
+Task1: O(n)
+    - iterate texts in a loop O(t)
+        - read calling_number by list index O(1)
+        - read answering_number by list index O(1)
+        - add calling number to set O(1)
+        - add aswering number to set O(1)
+    - iterate calls in a loop O(c)
+        - read calling_number by list index O(1)
+        - read answering_number by list index O(1)
+        - add calling number to set O(1)
+        - add answering number to set O(1)
+    - print statement O(1)
+    The worst case run time is linear O(n), proportional to input size of both csv files.
+    The set add operation is O(1) on average when implemented by a hash table.
+    [O(t) * (4 * O(1))] + [O(c) * (4 * O(1))] + O(1)
+    O(t)*4 + O(c)*4 + 1
+    O(t) + O(c)
+    O(t + c)
+    if n = total input size of both csv files: O(n) = O(t + c)
