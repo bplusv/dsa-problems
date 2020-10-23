@@ -6,6 +6,7 @@ Task0: O(1)
     The worst case run time is constant.
 
 
+
 Task1: O(n)
     - iterate texts in a loop O(t)
         - read calling_number by list index O(1)
@@ -23,6 +24,7 @@ Task1: O(n)
     if n = total input size of both csv files: O(n) = O(t + c)
 
 
+
 Task2: O(n)
     - iterate calls in a loop O(n)
         - read calling_number by list index O(1)
@@ -36,9 +38,44 @@ Task2: O(n)
         - if conditional comparison O(1)
         - max_number assignment O(1)
 
-
     The worst case run time is linear O(n), proportional to the input size of the calls CSV file.
     The total_time dictionary has the unique numbers as keys, the size will be at most n, if all calls have unique numbers.
     Where n is the input size of the calls CSV file.
     The max_number assignment will be executed at most n times in the worst time.
     The dictionary get/set operation is O(1) on average when implemented by a hash table.
+
+
+
+Task3: O(n)
+    - iterate calls in a loop O(n)
+        - read calling_number by list index O(1)
+        - read answering_number by list index O(1)
+        - if conditional comparison O(1)
+        - from_bangalore assignment and increment O(1)
+        - if conditional comparison O(1)
+        - find string operation O(s), where s is string length
+        - code assignment substring O(1)
+        - set add operation O(1)
+        - if coditional comparison O(1)
+        - from_and_to_bangalore assignment and increment O(1)
+        - if conditional and 'in' comparison with 3 options O(1)
+        - set add operation O(1)
+        - if coditional comparison O(1)
+        - set add operation O(1)
+    - unique_sorted_codes assignment and list creation O(n)
+    - unique_sorted_codes sort() operation O(nlogn)
+    - print operation O(1)
+    - iterate unique_sorted_codes in a loop O(n)
+        - print operation O(1)
+    - percentage assignment and division operation O(1)
+    - print operation O(1)
+
+    The worst case run time is linear O(n), proportional to the input size of the calls CSV file.
+    string find operation takes O(s*b) in the worst case, in our case the single char is in the first positions and should run quickly.
+    where s is the string and b is the substring. If b is a single char, then complexity is O(s).
+    Since the string are small, s is relatively small to n, the O(n) for the calls CSV file size is much more relevant.
+
+
+
+
+        
