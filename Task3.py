@@ -60,7 +60,7 @@ for call in calls:
             if code == '080':
                 from_and_to_bangalore += 1
         elif answering_number[0] in ('7', '8', '9'):
-            unique_codes.add(answering_number[0:5])
+            unique_codes.add(answering_number[0:4])
         elif answering_number[0:4] == '140':
             unique_codes.add('140')
 
