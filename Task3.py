@@ -70,5 +70,5 @@ print('The numbers called by people in Bangalore have codes:')
 for code in unique_sorted_codes:
     print(code)
 
-percentage = from_and_to_bangalore / from_bangalore
+percentage = from_and_to_bangalore / from_bangalore * 100
 print(f'{percentage:0.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')

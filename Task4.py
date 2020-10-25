@@ -40,12 +40,7 @@ for call in calls:
     makes_call_numbers.add(calling_number)
     receives_call_numbers.add(answering_number)
 
-possible_telemarketers = []
-for number in makes_call_numbers:
-    if (number not in receives_call_numbers and
-        number not in sends_text_numbers and
-        number not in receives_text_numbers):
-            possible_telemarketers.append(number)
+possible_telemarketers = list(makes_call_numbers - receives_call_numbers - sends_text_numbers - receives_text_numbers)
 
 possible_telemarketers.sort()
 print('These numbers could be telemarketers: ')
