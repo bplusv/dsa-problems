@@ -64,8 +64,7 @@ for call in calls:
         elif answering_number[0:4] == '140':
             unique_codes.add('140')
 
-unique_sorted_codes = list(unique_codes)
-unique_sorted_codes.sort()
+unique_sorted_codes = sorted(unique_codes)
 print('The numbers called by people in Bangalore have codes:')
 for code in unique_sorted_codes:
     print(code)

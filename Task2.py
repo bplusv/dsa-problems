@@ -27,9 +27,6 @@ for call in calls:
     total_time[incoming_number] = total_time.get(incoming_number, 0) + duration
     total_time[answering_number] = total_time.get(answering_number, 0) + duration
 
-max_number = calls[0][0]
-for number in total_time:
-    if total_time[number] > total_time[max_number]:
-        max_number = number
+max_number, max_time = max(total_time.items(), key=lambda kv: kv[1])
 
-print(f'{max_number} spent the longest time, {total_time[max_number]} seconds, on the phone during September 2016.')
+print(f'{max_number} spent the longest time, {max_time} seconds, on the phone during September 2016.')
