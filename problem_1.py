@@ -1,6 +1,5 @@
 class LRU_Cache:
-    """
-    A LRU_Cache can save key, value items as a dictionary with the
+    """ A LRU_Cache can save key, value items as a dictionary with the
     get, set methods. When the max capacity is exceeded, the least
     recently used is evicted from the cache first.
 
@@ -9,8 +8,7 @@ class LRU_Cache:
     """
 
     class QueueNode:
-        """
-        This internal Node class is used to implement a doubly-linked list,
+        """ This internal Node class is used to implement a doubly-linked list,
         it stores key and value for the cache use case, and prev, next pointers.
 
         Args:
