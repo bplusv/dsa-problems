@@ -1,0 +1,5 @@
+The Huffman Coding compression algorithm was implemented using a MinHeap data structure and a regular binary tree for the Huffman tree. The MinHeap was implemented with the common approach of using an array for storage, this is possible because the heap is stored as a complete binary tree, this means it will have all levels filled maybe except the last one, always from left to right. Python has a built-in heapq module with heapify(), heappush() and heapop() functions. In this case, the MinHeap is implemented from scratch for practice.
+
+The Huffman tree is constructed using the MinHeap storing key-value pairs, the heap min property is based on keys. The value is a Node containing frequency, a character, and left-right children. Added logic for a single symbol tree edge case, return only the count.
+
+MinHeap insert/extract is O(log(n)). Overall tree building + encoding is O(n log(n)), and decoding is O(n). Huffman tree size is 2n - 1, where n is the number of unique symbols, as leaves.
