@@ -1,0 +1,3 @@
+The Active Directory search function was implemented by updating the Group object to use the Set data structure to test membership in O(1), instead of traversing a regular array list in O(n).
+
+A Queue was implemented to perform a breadth-first search on the Active Directory graph. To prevent a loop, a visited set was added, to keep track of the already visited nodes. Worst-case complexity is O(n), where n is the number of Group nodes reachable.
