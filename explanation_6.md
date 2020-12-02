@@ -1,0 +1,5 @@
+The Union and Intersection methods are implemented using linked lists, this structure is called "LinkedSet" to denote that it's a set and duplicate values are forbidden. The append method inserts the new value in the corresponding order, creating an ordered list in O(n^2) for the worst case.
+
+The union and intersection methods create a new list for the result. Since the lists are ordered and without duplicates, we can traverse both lists and generate the union or intersection in O(n + m) time, where n and m are the lengths of the lists. Since the union and intersection are the main use cases for this problem these operations run in linear time, while the list construction using append is not optimal.
+
+The performance could be improved using other data structures like hash tables for dictionaries or sets, but for this problem, we're limited to using linked lists only.
