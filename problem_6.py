@@ -106,44 +106,57 @@ def test_case_1():
 def test_case_2():
     print('--- test_case_2 ---')
     # test empty intersection
-    linked_list_3 = LinkedSet()
-    linked_list_4 = LinkedSet()
+    linked_list_1 = LinkedSet()
+    linked_list_2 = LinkedSet()
     element_1 = [3,2,4,35,6,65,6,4,3,23]
     element_2 = [1,7,8,9,11,21,1]
     for i in element_1:
-        linked_list_3.append(i)
+        linked_list_1.append(i)
     for i in element_2:
-        linked_list_4.append(i)
-    print (union(linked_list_3,linked_list_4))
-    print (intersection(linked_list_3,linked_list_4))
+        linked_list_2.append(i)
+    print (union(linked_list_1,linked_list_2))
+    print (intersection(linked_list_1,linked_list_2))
 
 def test_case_3():
     print('--- test_case_3 ---')
     # test empty set + single item set
-    linked_list_3 = LinkedSet()
-    linked_list_4 = LinkedSet()
+    linked_list_1 = LinkedSet()
+    linked_list_2 = LinkedSet()
     element_1 = []
     element_2 = [1]
     for i in element_1:
-        linked_list_3.append(i)
+        linked_list_1.append(i)
     for i in element_2:
-        linked_list_4.append(i)
-    print (union(linked_list_3,linked_list_4))
-    print (intersection(linked_list_3,linked_list_4))
+        linked_list_2.append(i)
+    print (union(linked_list_1,linked_list_2))
+    print (intersection(linked_list_1,linked_list_2))
 
 def test_case_4():
     print('--- test_case_4 ---')
     # test empty sets
-    linked_list_3 = LinkedSet()
-    linked_list_4 = LinkedSet()
+    linked_list_1 = LinkedSet()
+    linked_list_2 = LinkedSet()
     element_1 = []
     element_2 = []
     for i in element_1:
-        linked_list_3.append(i)
+        linked_list_1.append(i)
     for i in element_2:
-        linked_list_4.append(i)
-    print (union(linked_list_3,linked_list_4))
-    print (intersection(linked_list_3,linked_list_4))
+        linked_list_2.append(i)
+    print (union(linked_list_1,linked_list_2))
+    print (intersection(linked_list_1,linked_list_2))
+
+def test_case_5():
+    print('--- test_case_5 ---')
+    linked_list_1 = LinkedSet()
+    linked_list_2 = LinkedSet()
+    element_1 = [4,3,2,1,5,6]
+    element_2 = [8,7,1,5,6]
+    for i in element_1:
+        linked_list_1.append(i)
+    for i in element_2:
+        linked_list_2.append(i)
+    print (union(linked_list_1,linked_list_2))
+    print (intersection(linked_list_1,linked_list_2))
 
 
 
@@ -162,3 +175,8 @@ test_case_3()
 test_case_4()
 # linked_set: <empty>
 # linked_set: <empty>
+
+
+test_case_5()
+# linked_set: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 
+# linked_set: 1 -> 5 -> 6 ->

@@ -2,4 +2,4 @@ The Huffman Coding compression algorithm was implemented using a MinHeap data st
 
 The Huffman tree is constructed using the MinHeap storing key-value pairs, the heap min property is based on keys. The value is a Node containing frequency, a character, and left-right children. Added logic for a single symbol tree edge case, return only the count.
 
-MinHeap insert/extract is O(log(n)). Overall tree building + encoding is O(n log(n)), and decoding is O(n). Huffman tree size is 2n - 1, where n is the number of unique symbols, as leaves.
+MinHeap insert/extract is O(log(n)). Overall tree building + encoding is O(n log(n)), and decoding is O(n). Huffman tree size is 2n - 1, where n is the number of unique symbols, as leaves. Space complexity for enconding and decoding is O(n), the tree size O(n), and additional dictionary structures size are O(n).
