@@ -4,7 +4,7 @@ def _rotated_array_search(arr, number, left, right):
     middle = (left + right) // 2
     if arr[middle] == number:
         return middle
-    if arr[left] <= arr[middle]:
+    if left < middle and arr[left] < arr[middle]:
         if number >= arr[left] and number < arr[middle]:
             return _rotated_array_search(arr, number, left, middle - 1)
         else:
