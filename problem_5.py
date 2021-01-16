@@ -8,7 +8,7 @@ class TrieNode:
         
     def suffixes(self, suffix = ''):
         res = []
-        if self.word_end:
+        if self.word_end and suffix:
             res.append(suffix)
         for char, node in self.children.items():
             res += node.suffixes(suffix + char)
@@ -54,4 +54,6 @@ def test_function(test_case):
         print("Fail")
 
 
+test_function(['ant', ['hology', 'agonist', 'onym']])
+test_function(['fu', ['n', 'nction']])
 test_function(['tri', ['e', 'gger', 'gonometry', 'pod']])
