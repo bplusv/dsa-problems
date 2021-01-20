@@ -13,8 +13,10 @@ def sift_down(arr, i, n):
 
 def heap_sort(arr):
     n = len(arr)
+    # heapify in O(n)
     for i in range(n // 2, -1, -1):
         sift_down(arr, i, n)
+    # sort in O(nlog(n))
     for i in range(n - 1, 0, -1):
         arr[0], arr[i] = arr[i], arr[0]
         sift_down(arr, 0, i)
@@ -23,11 +25,12 @@ def heap_sort(arr):
 def rearrange_digits(arr):
     """
     Rearrange Array Elements so as to form two number such that their sum is maximum.
+    We can assume that all array elements are in the range [0, 9]
 
     Args:
        arr(list): Input List
     Returns:
-       (int),(int): Two maximum sums
+       (int, int): Two maximum sums
     """
     heap_sort(arr)
     res = [0, 0]
@@ -39,12 +42,18 @@ def rearrange_digits(arr):
 
 
 def test_function(test_case):
-    output = rearrange_digits(test_case[0])
-    solution = test_case[1]
-    if sum(output) == sum(solution):
+    test_input, test_expected = test_case
+    test_actual = rearrange_digits(test_input)
+    if sum(test_actual) == sum(test_expected):
         print("Pass")
     else:
         print("Fail")
 
+
+test_function([[], [0, 0]])
+test_function([[0], [0, 0]])
+test_function([[1], [0, 1]])
 test_function([[1, 2, 3, 4, 5], [542, 31]])
 test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
+test_function([[7, 7], [7, 7]])
+test_function([[5, 5, 0, 0], [50, 50]])

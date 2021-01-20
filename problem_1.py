@@ -5,7 +5,7 @@ def sqrt(number):
     Args:
        number(int): Number to find the floored squared root
     Returns:
-       int: Floored Square Root
+       (int): Floored Square Root
     """
     assert number >= 0, 'Only square root of positive numbers are valid'
     start = 0

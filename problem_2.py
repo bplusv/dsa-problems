@@ -23,7 +23,7 @@ def rotated_array_search(arr, number):
     Args:
         arr(array), number(int): Input array to search and the target
     Returns:
-        int: Index or -1
+        (int): Index or -1
     """
     return _rotated_array_search(arr, number, 0, len(arr) - 1)
 
