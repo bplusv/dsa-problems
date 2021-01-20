@@ -34,10 +34,10 @@ def test_function(test_case):
         print("Fail")
 
 
-test_function([0, 0])
-test_function([1, 1])
-test_function([9, 3])
-test_function([15, 3])
-test_function([27, 5])
-test_function([99, 9])
-test_function([100, 10])
+test_function((0, 0))
+test_function((1, 1))
+test_function((9, 3))
+test_function((15, 3))
+test_function((27, 5))
+test_function((99, 9))
+test_function((100, 10))

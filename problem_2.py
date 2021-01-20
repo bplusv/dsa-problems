@@ -28,25 +28,20 @@ def rotated_array_search(arr, number):
     return _rotated_array_search(arr, number, 0, len(arr) - 1)
 
 
-def linear_search(arr, number):
-    for index, element in enumerate(arr):
-        if element == number:
-            return index
-    return -1
-
-
 def test_function(test_case):
-    arr = test_case[0]
-    number = test_case[1]
-    if linear_search(arr, number) == rotated_array_search(arr, number):
+    test_input, test_expected = test_case
+    test_actual = rotated_array_search(*test_input)
+    if test_actual == test_expected:
         print("Pass")
     else:
         print("Fail")
 
 
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 8])
-test_function([[6, 7, 8, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 10])
-test_function([[0, 1, 2, 3, 4, 5, 6, 7], 3])
+test_function((([6, 7, 8, 9, 10, 1, 2, 3, 4], 6), 0))
+test_function((([6, 7, 8, 9, 10, 1, 2, 3, 4], 1), 5))
+test_function((([6, 7, 8, 1, 2, 3, 4], 8), 2))
+test_function((([6, 7, 8, 1, 2, 3, 4], 1), 3))
+test_function((([6, 7, 8, 1, 2, 3, 4], 10), -1))
+test_function((([0, 1, 2, 3, 4, 5, 6, 7], 3), 3))
+test_function((([], 7), -1))
+test_function((([1], 1), 0))
