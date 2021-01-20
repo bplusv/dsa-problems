@@ -24,7 +24,7 @@ class TrieNode:
         Args:
             suffix(string): A variable to collect all the suffixes on recursion.
         Returns:
-            (array): A list containing all the suffixes.
+            (list): A list containing all the suffixes.
         """
         res = []
         if self.word_end and suffix:

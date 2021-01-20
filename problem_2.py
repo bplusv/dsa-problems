@@ -21,7 +21,7 @@ def rotated_array_search(arr, number):
     Find the index by searching in a rotated sorted array
 
     Args:
-        arr(array), number(int): Input array to search and the target
+        arr(list), number(int): Input array to search and the target
     Returns:
         (int): Index or -1
     """
