@@ -23,13 +23,22 @@ def sort_012(arr):
 
 
 def test_function(test_case):
-    sorted_array = sort_012(test_case)
-    if sorted_array == sorted(test_case):
+    test_input, test_expected = test_case
+    test_actual = sort_012(test_input)
+    if test_actual == test_expected:
         print("Pass")
     else:
         print("Fail")
 
 
-test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
-test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
-test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
+test_function(([], []))
+test_function(([0], [0]))
+test_function(([0, 0], [0, 0]))
+test_function(([1, 1, 1], [1, 1, 1]))
+test_function(([2, 2, 2, 2], [2, 2, 2, 2]))
+test_function(([0, 1, 1, 0], [0, 0, 1, 1]))
+test_function(([2, 1, 1, 2], [1, 1, 2, 2]))
+test_function(([2, 1, 0], [0, 1, 2]))
+test_function(([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2], [0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2]))
+test_function(([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]))
+test_function(([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]))

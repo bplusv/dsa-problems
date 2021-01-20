@@ -50,10 +50,10 @@ def test_function(test_case):
         print("Fail")
 
 
-test_function([[], [0, 0]])
-test_function([[0], [0, 0]])
-test_function([[1], [0, 1]])
-test_function([[1, 2, 3, 4, 5], [542, 31]])
-test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
-test_function([[7, 7], [7, 7]])
-test_function([[5, 5, 0, 0], [50, 50]])
+test_function(([], [0, 0]))
+test_function(([0], [0, 0]))
+test_function(([1], [0, 1]))
+test_function(([1, 2, 3, 4, 5], [542, 31]))
+test_function(([4, 6, 2, 5, 9, 8], [964, 852]))
+test_function(([7, 7], [7, 7]))
+test_function(([5, 5, 0, 0], [50, 50]))
