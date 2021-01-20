@@ -4,6 +4,8 @@ def sort_012(arr):
 
     Args:
        arr(list): List to be sorted
+    Returns:
+        (None)
     """
     n = len(arr)
     pos0 = 0
