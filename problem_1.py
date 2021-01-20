@@ -25,8 +25,19 @@ def sqrt(number):
     return res
 
 
-print ("Pass" if  (3 == sqrt(9)) else "Fail")
-print ("Pass" if  (0 == sqrt(0)) else "Fail")
-print ("Pass" if  (4 == sqrt(16)) else "Fail")
-print ("Pass" if  (1 == sqrt(1)) else "Fail")
-print ("Pass" if  (5 == sqrt(27)) else "Fail")
+def test_function(test_case):
+    test_input, test_expected = test_case
+    test_actual = sqrt(test_input)
+    if test_actual == test_expected:
+        print("Pass")
+    else:
+        print("Fail")
+
+
+test_function([0, 0])
+test_function([1, 1])
+test_function([9, 3])
+test_function([15, 3])
+test_function([27, 5])
+test_function([99, 9])
+test_function([100, 10])
