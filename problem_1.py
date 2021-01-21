@@ -27,13 +27,18 @@ def sqrt(number):
 
 def test_function(test_case):
     test_input, test_expected = test_case
-    test_actual = sqrt(test_input)
+    try:
+        test_actual = sqrt(test_input)
+    except AssertionError:
+        test_actual = AssertionError
     if test_actual == test_expected:
         print("Pass")
     else:
         print("Fail")
 
 
+test_function((-75, AssertionError))
+test_function((-1, AssertionError))
 test_function((0, 0))
 test_function((1, 1))
 test_function((9, 3))
