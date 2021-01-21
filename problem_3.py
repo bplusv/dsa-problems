@@ -50,7 +50,6 @@ def test_function(test_case):
         print("Fail")
 
 
-
 test_function(([], [0, 0]))
 test_function(([0], [0, 0]))
 test_function(([1], [0, 1]))
