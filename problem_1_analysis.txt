@@ -1,0 +1,17 @@
+Problem_1: O(n)
+    - iterate texts in a loop O(t)
+        - read calling_number by list index O(1)
+        - read answering_number by list index O(1)
+        - add calling number to set O(1)
+        - add aswering number to set O(1)
+    - iterate calls in a loop O(c)
+        - read calling_number by list index O(1)
+        - read answering_number by list index O(1)
+        - add calling number to set O(1)
+        - add answering number to set O(1)
+    - count assignment and len operations O(1)
+    - print statement O(1)
+    The worst case run time is linear O(n), proportional to input size of both csv files.
+    n = total input size of both csv files: O(n) = O(t + c)
+    The set.add() operation is O(1) on average when implemented by a hash table.
+    len() operation on list is O(1)

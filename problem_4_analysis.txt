@@ -1,0 +1,21 @@
+Problem_4: O(nlogn)
+    - iterate texts in a loop O(t)
+        - read sending_number by list index O(1)
+        - read receiving_number by list index O(1)
+        - set add operation O(1)
+        - set add operation O(1)
+    - iterate calls in a loop O(c)
+        - read sending_number by list index O(1)
+        - read receiving_number by list index O(1)
+        - set add operation O(1)
+        - set add operation O(1)
+    - make a list from 3 'set.difference()' operations O(n)
+    - possible_telemarketers list.sort() operation O(nlogn)
+    - iterate possible_telemarketers in a loop O(c)
+        - print operation O(1)
+
+    The worst case run time is O(nlogn), proportional to input size of both CSV files.
+    The set.add()/set.__contains__() operations are O(1) on average when implemented by a hash table.
+    n = total input size of both csv files: O(n) = O(t + c)
+    * The complexity is dominated by sort O(nlogn) complexity over O(n) loops.
+    Complexity for set.difference(a, b) operation is O(len(a))

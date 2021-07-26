@@ -1,0 +1,17 @@
+Problem_2: O(n)
+    - iterate calls in a loop O(n)
+        - read calling_number by list index O(1)
+        - read answering_number by list index O(1)
+        - read duration by list index and cast to int O(1)
+        - get value from total_time dictionary or set value = 0 if calling_number key not found O(1)
+        - set value = value + 1 to total_time dictionary for calling_number key O(1)
+        - get value from total_time dictionary or set value = 0 if answering_number key not found O(1)
+        - set value = value + 1 to total_time dictionary for answering_number key O(1)
+    - iterate total_time dictionary in a loop O(n)
+        - if conditional comparison O(1)
+        - max_number assignment O(1)
+
+    The worst case run time is linear O(n), proportional to the input size of the calls CSV file.
+    The total_time dictionary has the unique numbers as keys, the size will be at most n, if all calls have unique numbers.
+    The max_number assignment will be executed at most n times in the worst time.
+    The dictionary get()/set() operations are O(1) on average when implemented by a hash table.

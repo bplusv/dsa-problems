@@ -1,0 +1,6 @@
+Problem_0: O(1)
+    - accesss the texts list by index O(1)
+    - print statement O(1)
+    - access the calls list by index O(1)
+    - print statement O(1)
+    The worst case run time is constant O(1).
