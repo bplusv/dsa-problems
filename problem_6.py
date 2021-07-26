@@ -1,40 +1,89 @@
-def get_min_max(arr):
+import os
+
+class Queue:
+    """ A regular Queue class with FIFO behavior 
+        with enqueue and dequeue methods.
     """
-    Return a tuple(min, max) out of list of unsorted integers.
+    class QueueNode:
+        """ Internal class for Queue node """
+        def __init__(self, value):
+            self.value = value
+            self.next = None
+
+    def __init__(self):
+        self.front = None
+        self.back = None
+        self._size = 0
+
+    def size(self):
+        return self._size
+    
+    def enqueue(self, value):
+        node = self.QueueNode(value)
+        if self.back:
+            self.back.next = node
+        self.back = node
+        if not self.front:
+            self.front = node
+        self._size += 1
+
+    def dequeue(self):
+        assert self._size > 0, 'Queue is empty'
+        node = self.front
+        self.front = self.front.next
+        if not self.front:
+            self.back = None
+        self._size -= 1
+        return node.value
+
+
+def find_files(suffix, path):
+    """ Find all files beneath path with file name suffix.
+
+    Note that a path may contain further subdirectories
+    and those subdirectories may also contain further subdirectories.
+    There are no limit to the depth of the subdirectories can be.
 
     Args:
-       arr(list): list of integers containing one or more integers
+      suffix(str): suffix if the file name to be found
+      path(str): path of the file system
     Returns:
-        (int, int): A tuple of min and max numbers.
+       a list of paths
     """
-    if len(arr) == 0:
-        return None, None
-    min_number = max_number = arr[0]
-    for number in arr:
-        if number < min_number:
-            min_number = number
-        if number > max_number:
-            max_number = number
-    return min_number, max_number
+    found_files = []
+    directories = Queue()
+    if os.path.isdir(path):
+        directories.enqueue(path)
+    while directories.size() > 0:
+        directory = directories.dequeue()
+        for item in os.listdir(directory):
+            item_path = os.path.join(directory, item)
+            if os.path.isfile(item_path):
+                if item_path.endswith(suffix):
+                    found_files.append(item_path)
+            elif os.path.isdir(item_path):
+                directories.enqueue(item_path)
+    return found_files
 
 
-def test_function(test_case):
-    test_input, test_expected = test_case
-    test_actual = get_min_max(test_input)
-    if test_actual == test_expected:
-        print("Pass")
-    else:
-        print("Fail")
+def test_case_1():
+    output = find_files('.c', 'testdir')
+    print(output)
+
+def test_case_2():
+    output = find_files('.h', 'testdir')
+    print(output)
+
+def test_case_3():
+    output = find_files('.py', 'testdir')
+    print(output)
 
 
-test_function(([], (None, None)))
-test_function(([0], (0, 0)))
-test_function(([-5], (-5, -5)))
-test_function(([7], (7, 7)))
-test_function(([9, 0, -4], (-4, 9)))
-test_function(([-5, -7, 0, 4, 5, -1, -2], (-7, 5)))
-test_function(([3, 5, 8, 1, 0, 9, 2, 4, 7, 6], (0, 9)))
-test_function(([58, 73, 82, 49, 52, 76, 77, 61, 37, 67, 40, 48, 40, 51, 73, 32, 64], (32, 82)))
-test_function(([-44, -44, -44], (-44, -44)))
-test_function(([99, 99, 99, 99], (99, 99)))
-test_function(([0, 0, 0, 0], (0, 0)))
+test_case_1()
+# ['testdir/t1.c', 'testdir/subdir5/a.c', 'testdir/subdir1/a.c', 'testdir/subdir3/subsubdir1/b.c']
+
+test_case_2()
+# ['testdir/t1.h', 'testdir/subdir5/a.h', 'testdir/subdir1/a.h', 'testdir/subdir3/subsubdir1/b.h']
+
+test_case_3()
+# []

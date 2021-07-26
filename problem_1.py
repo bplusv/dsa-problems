@@ -1,48 +1,36 @@
-def sqrt(number):
-    """
-    Calculate the floored square root of a number
+"""
+Read file into texts and calls.
+It's ok if you don't understand how to read files.
+"""
+import csv
+with open('texts.csv', 'r') as f:
+    reader = csv.reader(f)
+    texts = list(reader)
 
-    Args:
-       number(int): Number to find the floored squared root
-    Returns:
-       (int): Floored Square Root
-    """
-    assert number >= 0, 'Only square root of positive numbers are valid'
-    start = 0
-    end = number
-    res = None
-    while start <= end:
-        middle = (start + end) // 2
-        square = middle ** 2
-        next_square = (middle + 1) ** 2
-        if square <= number and next_square > number:
-            res = middle
-            break
-        if square > number:
-            end = middle - 1
-        else:
-            start = middle + 1
-    return res
+with open('calls.csv', 'r') as f:
+    reader = csv.reader(f)
+    calls = list(reader)
 
 
-def test_function(test_case):
-    test_input, test_expected = test_case
-    try:
-        test_actual = sqrt(test_input)
-    except AssertionError:
-        test_actual = AssertionError
-    if test_actual == test_expected:
-        print("Pass")
-    else:
-        print("Fail")
+"""
+TASK 1:
+How many different telephone numbers are there in the records? 
+Print a message:
+"There are <count> different telephone numbers in the records."
+"""
 
+unique_numbers = set()
 
-test_function((-75, AssertionError))
-test_function((-1, AssertionError))
-test_function((0, 0))
-test_function((1, 1))
-test_function((9, 3))
-test_function((15, 3))
-test_function((27, 5))
-test_function((99, 9))
-test_function((100, 10))
+for text in texts:
+    calling_number, answering_number = text[0], text[1]
+    unique_numbers.add(calling_number)
+    unique_numbers.add(answering_number)
+
+for call in calls:
+    calling_number, answering_number = call[0], call[1]
+    unique_numbers.add(calling_number)
+    unique_numbers.add(answering_number)
+
+count = len(unique_numbers)
+
+print(f'There are {count} different telephone numbers in the records.')
